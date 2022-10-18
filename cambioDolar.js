@@ -9,11 +9,17 @@ const [,,parametro1,parametro2,parametro3]=process.argv
 const [,cantidad] = parametro1.split('=')
 const [,tasa] = parametro2.split('=')
 let [,tipo] = parametro3.split('=')
-tipo = (tipo === "true")
+//tipo = (tipo === "true")
 console.log(tipo)
 
-//if(tipo === true){
-let valorResultante = tipo ? cantidad*tasa : cantidad/tasa
+if(tipo === "true"){
+    let valorResultante = cantidad*tasa;
+    console.log(`El cambio es: ${valorResultante}Lps`);
+}else{
+    let valorResultante1 = cantidad/tasa;
+    console.log(`El cambio es: ${valorResultante1}$`);
+}
 
-console.log(`El cambio es: ${valorResultante} ${tipo? 'lps':'$'}`);
+// let valorResultante = tipo ? cantidad*tasa : cantidad/tasa
+// console.log(`El cambio es: ${valorResultante} ${tipo? 'lps':'$'}`);
 
